@@ -1,0 +1,35 @@
+<div class="note-creator shadow-2" [ngStyle]="{'background-color': newNote.color}" >
+      <form class="row" (submit)="onCreateNote()">
+        <input
+          type="text"
+          [(ngModel)]="newNote.title"
+          name="newNoteTitle"
+          placeholder="Title"
+          class="col-xs-10 title"
+          *ngIf="fullForm"
+        >
+        <input
+          type="text"
+          [(ngModel)]="newNote.value"
+          name="newNoteValue"
+          placeholder="Take a note..."
+          class="col-xs-10"
+          (focus)="toggle(true)"
+        >
+        <div class="actions col-xs-12 row between-xs" *ngIf="fullForm">
+          <div class="col-xs-3">
+            <color-picker
+              (selected)="onColorSelect($event)"
+              [colors]="colors"
+            >
+            </color-picker>
+          </div>
+          <button
+            type="submit"
+            class="btn-light"
+           >
+            Done
+          </button>
+        </div>
+      </form>
+    </div>

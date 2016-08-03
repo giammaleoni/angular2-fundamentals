@@ -1,0 +1,9 @@
+<header class="app-bar row middle-xs">
+    <span [routerLink]="['']" class="logo col-xs-10">AngularClass - Angular2 Fundamentals</span>
+    <nav class="col-xs-2">
+        <div class="row middle-xs between-xs">
+            <span [routerLink]="['', 'about']" class="link">About</span>
+            <span (click)="signout()" class="link">Signout</span>
+        </div>
+    </nav>
+</header>
